@@ -15,14 +15,37 @@ $d4 = new Dice;
 $d5 = new Dice;
 
 $dies = [$d1, $d2, $d3, $d4, $d5];
-// Algoritm för att kolla om vi har ett par.
-/*
-a = 1 och b = (a+1)
-Kolla tärning a. Kolla tärning b. Jämför.
-Om olika, öka b.
-Om b > 5, öka a med 1 och därefter sätt b = (a+1)
-*/
 
 foreach ($dies as $dice) {
     echo '<p>' . $dice->getValue();
+}
+
+echo "<p>" . same($dies);
+
+
+function same($dies)
+{
+    // Gå igenom arrayen en i taget, därefter loopa igenom alla tänkbara värden.
+    // Går förmodligen snabbare tvärtom, men vad är en millisekund...
+    for ($i = 1; $i <= 6; $i++) {
+        $pairCounter = 0;
+        foreach ($dies as $die) {
+            if ($die->getValue() == $i)
+                $pairCounter++;
+        }
+        // Här skulle nog en switch/case passa bättre...
+        if ($pairCounter == 2) {
+            return "Par";
+        }
+        if ($pairCounter == 3) {
+            return "Triss";
+        }
+        if ($pairCounter == 4) {
+            return "Fyrtal";
+        }
+        if ($pairCounter == 5) {
+            return "Yatzy";
+        }
+    }
+    return "Inget par. Märkligt";
 }
