@@ -49,3 +49,15 @@ function same($dies)
     }
     return "Inget par. Märkligt";
 }
+
+function straight()
+{
+    /* Lite olika varianter här för att se om tärningarna är 1,2,3,4,5 eller 2,3,4,5,6.
+
+    A. Sortera tärningarna och omvandla deras värde till en sträng, jämför med två hårdkodade strängar.
+    B. Sortera tärningarna och loopa igenom dem. Lagra värdet på varje tärning, och jämför med nästa. Om skillnaden är 1 är det bra, annars sätter vi en variabel till false. Om vi har kört igenom hela loopen utan att variabeln är false, så kollar vi värdet på den sista tärningen. Om det är 5 så är det liten straight, annars är det stor.
+    C. Börja med att räkna summan. Om tärningarnas summa är 15 eller 20 så kan det vara en straight, annars inte. Snabbt sätt att kolla, men om den kollen är positiv så måste vi gå vidare.
+    D. Använd "same-funktionen" för att kolla om det inte finns några par, därefter går du vidare och kollar om någon av tärningarna 2,3,4,5 saknas (i så fall är det inte en stege), och därefter kollar vi om den sista tärningen är 1 eller 6 (för att avgöra om det är stor eller liten).
+    
+    */
+}
